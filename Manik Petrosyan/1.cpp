@@ -28,22 +28,16 @@ int main() {
 
     // Get X max value
     for (int i: X) {
-        if (i > X_vector_max_value) {
-            X_vector_max_value = i;
-        }
+        if (i > X_vector_max_value) X_vector_max_value = i;
     }
 
     // Fill Y
     for (int i: X) {
         int item = i;
 
-        if (item < 0) {
-            item = item * -1;
-        }
+        if (item < 0) item = item * -1;
 
-        if (item < X_vector_max_value) {
-            Y.push_back(item);
-        }
+        if (item < X_vector_max_value) Y.push_back(item);
     }
 
     // Show Y data

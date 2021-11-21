@@ -29,9 +29,7 @@ int main() {
 
     // Fill Y
     for (int i: X) {
-        if (i % k == 0) {
-            Y.push_back(i);
-        }
+        if (i % k == 0) Y.push_back(i);
     }
 
     // Show Y data

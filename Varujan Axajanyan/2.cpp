@@ -1,5 +1,4 @@
 #include <iostream>
-#include <vector>
 using namespace std;
 
 int random(int max) {
@@ -19,29 +18,23 @@ int main() {
         cin >> n;
     } while (n <= 0);
 
-    cout << "Typw k: ";
+    cout << "Type k: ";
     cin >> k;
 
     int numbers[n][n];
 
     // Fill numbers array
     for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
-            numbers[i][j] = random(n);
-        }
+        for (int j = 0; j < n; j++) numbers[i][j] = random(n);
     }
 
     // Get items count
     for (int i = 0; i < n; i++) {
         int item = numbers[i][i];
 
-        if (item < 0) {
-            item *= -1;
-        }
+        if (item < 0) item *= -1;
 
-        if (item > k) {
-            gtk_count++;
-        }
+        if (item > k) gtk_count++;
     }
 
     // Show result

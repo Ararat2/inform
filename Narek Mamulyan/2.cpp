@@ -21,9 +21,7 @@ int main() {
 
     // Fill numbers array
     for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
-            numbers[i][j] = random(n);
-        }
+        for (int j = 0; j < n; j++) numbers[i][j] = random(n);
     }
 
     int max_value = numbers[0][0];
@@ -31,17 +29,13 @@ int main() {
     // Get max value and indexes sum
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
-            if (j != i) {
-                continue;
-            };
+            if (j != i) continue;
             
             int item = numbers[i][j];
 
             indexes_sum += i + j;
 
-            if (item > max_value) {
-                max_value = item;
-            }
+            if (item > max_value) max_value = item;
         }
     }
 

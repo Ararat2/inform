@@ -22,9 +22,7 @@ int main() {
 
     // Fill numbers array
     for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
-            numbers[i][j] = random(n);
-        }
+        for (int j = 0; j < n; j++) numbers[i][j] = random(n);
     }
 
     // Get range min value
@@ -39,9 +37,7 @@ int main() {
     for (int i = 0; i < n; i++) {
         int item = numbers[i][i];
 
-        if (item >= range[0] && item <= range[1]) {
-            sum += item;
-        }
+        if (item >= range[0] && item <= range[1]) sum += item;
     }
 
     // Show result

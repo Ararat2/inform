@@ -25,9 +25,7 @@ int main() {
 
     // Fill Y
     for (int i = 0; i < X.size(); i++) {
-        if (i % 2 == 0) {
-            Y.push_back(X[i]);
-        }
+        if (i % 2 == 0) Y.push_back(X[i]);
     }
 
     // Show Y data

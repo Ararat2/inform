@@ -21,16 +21,12 @@ int main() {
 
     // Fill numbers array
     for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
-            numbers[i][j] = random(n);
-        }
+        for (int j = 0; j < n; j++) numbers[i][j] = random(n);
     }
 
     // Get zeros count
     for (int i = 0; i < n; i++) {
-        if (numbers[i][i] == 0) {
-            zeros_count++;
-        }
+        if (numbers[i][i] == 0) zeros_count++;
     }
 
     // Show result
