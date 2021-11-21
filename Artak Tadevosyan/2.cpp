@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
 int random(int max) {
@@ -9,8 +10,9 @@ int random(int max) {
 
 int main() {
     int n;
-    int range[2];;
     int sum = 0;
+    int result = 0;
+    vector<int> items;
 
     // Get n
     do {
@@ -18,7 +20,7 @@ int main() {
         cin >> n;
     } while (n <= 0);
 
-    int numbers[n][n];
+    int numbers[n][n]; 
 
     // Fill numbers array
     for (int i = 0; i < n; i++) {
@@ -27,25 +29,28 @@ int main() {
         }
     }
 
-    // Get range min value
-    cout << "Type range min value: ";
-    cin >> range[0];
-
-    // Get range max value
-    cout << "Type range max value: ";
-    cin >> range[1];
-
-    // Get sum
+    // Get numbers
     for (int i = 0; i < n; i++) {
-        int item = numbers[i][i];
+        bool is_odd = ((sum + i) % 2) == 0;
 
-        if (item >= range[0] && item <= range[1]) {
-            sum += item;
+        if (is_odd) {
+            items.push_back(numbers[i][i]);
+            sum += i;
         }
     }
 
+    // Get result
+    for (int i: items) {
+        if (result == 0) {
+            result = i;
+            continue;
+        }
+
+        result *= i;
+    }
+
     // Show result
-    cout << "Sum: " << sum << endl;
+    cout << "Sum: " << result << endl;
 
     return 0;
 }
