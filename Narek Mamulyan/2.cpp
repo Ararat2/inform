@@ -9,13 +9,12 @@ int random(int max) {
 
 int main() {
     int n;
-    int range[2];;
-    int sum = 0;
+    int indexes_sum = 0;
 
     // Get n
     do {
         cout << "Type n: ";
-        cin >> n;
+        cin >>  n;
     } while (n <= 0);
 
     int numbers[n][n];
@@ -27,25 +26,27 @@ int main() {
         }
     }
 
-    // Get range min value
-    cout << "Type range min value: ";
-    cin >> range[0];
+    int max_value = numbers[0][0];
 
-    // Get range max value
-    cout << "Type range max value: ";
-    cin >> range[1];
-
-    // Get sum
+    // Get max value and indexes sum
     for (int i = 0; i < n; i++) {
-        int item = numbers[i][i];
+        for (int j = 0; j < n; j++) {
+            if (j != i) {
+                continue;
+            };
+            
+            int item = numbers[i][j];
 
-        if (item >= range[0] && item <= range[1]) {
-            sum += item;
+            indexes_sum += i + j;
+
+            if (item > max_value) {
+                max_value = item;
+            }
         }
     }
 
     // Show result
-    cout << "Sum: " << sum << endl;
+    cout << "Result: " << indexes_sum * max_value << endl;
 
     return 0;
 }

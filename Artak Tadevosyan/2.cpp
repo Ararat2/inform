@@ -3,9 +3,9 @@
 using namespace std;
 
 int random(int max) {
-  int min = -max;
+    int min = -max;
 
-  return min + rand() % (( max + 1 ) - min);
+    return min + rand() % (( max + 1 ) - min);
 }
 
 int main() {
