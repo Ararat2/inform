@@ -1,5 +1,5 @@
 #include <iostream>
-#include <cmath>
+#include <vector>
 using namespace std;
 
 int random(int max) {
@@ -10,8 +10,8 @@ int random(int max) {
 
 int main() {
     int n;
+    int range[2];;
     int sum = 0;
-    int result;
 
     // Get n
     do {
@@ -28,18 +28,25 @@ int main() {
         }
     }
 
+    // Get range min value
+    cout << "Type range min value: ";
+    cin >> range[0];
+
+    // Get range max value
+    cout << "Type range max value: ";
+    cin >> range[1];
+
     // Get sum
     for (int i = 0; i < n; i++) {
-        int elem = numbers[i][i];
+        int item = numbers[i][i];
 
-        if (elemt > 0) sum += pow(elem, 2);
+        if (item >= range[0] && item <= range[1]) {
+            sum += item;
+        }
     }
 
-    // Calculate
-    result = sqrt(sum / n);
-    
-    // Show calculating result
-    cout << "Result: " << result << endl;
+    // Show result
+    cout << "Sum: " << sum << endl;
 
     return 0;
 }
